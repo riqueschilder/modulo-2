@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercicio1</title>
+</head>
+<body>
+
+    <header>
+        <div>
+            <p> Escolha um numero:
+            <input type="number" name="n1" id="n1"> 
+            </p>
+            <p> Escolha um sinal (entre +, -, *, /, // e %) :
+                <input type="text" name="sinal" id="sinal"> 
+                </p>
+            <p> Escolha outro numero:
+                <input type="number" name="n2" id="n2"> 
+                </p>
+            <p>
+                <input type="button" value="Resolver" onclick="resolver()">
+            </p>
+        </div>
+        <div id="resultado">
+            <p>O resultado da conta é:</p>
+        </div>
+    </header>
+    <script>
+        function resolver(){
+            var n1 = Number(document.getElementById('n1').value);
+            var n2 = Number(document.getElementById('n2').value);
+            var si = document.getElementById('sinal').value;
+            var resposta = document.querySelector('div#resultado')
+            var div = n1 / n2
+            if (si == "+"){var re = n1 + n2}
+            if (si == "-"){var re = n1 - n2}
+            if (si == "*"){var re = n1 * n2}
+            if (si == "/"){var re = n1 / n2}
+            if (si == "//"){var re = Math.floor(div)}
+            if (si == "%"){var re = n1 % n2}
+
+            resposta.innerHTML =` O resultado da conta é: ${re}`
+        }
+        
+    </script>
+    
+</body>
+</html>
