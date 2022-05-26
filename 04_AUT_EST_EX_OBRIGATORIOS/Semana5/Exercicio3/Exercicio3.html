@@ -4,9 +4,44 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Exercicio3</title>
 </head>
 <body>
-    
+    <header>
+        <div>
+            <p> Escreva uma lista de números:
+                <input type="text" name="lista" id="lista"> 
+            </p>
+            <p> Coloque um numero foco na sua lista:
+                <input type="number" name="foco" id="foco"> 
+            </p>
+            <p>
+                <input type="button" value="Resolver" onclick="resolver()">
+            </p>
+        </div>
+        <div id="resultado">
+            <p>O resultado da conta é:</p>
+        </div>
+    </header>
+    <script>
+        function resolver(){
+            var foco1 = document.getElementById('foco').value;
+            var pos = 0;
+            var text = document.getElementById("lista").value;
+
+            
+            var lista = text.split(',');
+            lista.unshift(foco1);
+            var foco = lista[pos];
+            var resultado = 0;
+            lista.sort((a,b)=>a-b);
+            resultado =  lista.indexOf(foco) + 1;
+            document.getElementById("resultado").innerHTML = ` Sendo o valor foco ${foco}, a sua posição ao ordenar a lista será ${resultado}º`
+            console.log(lista);
+            console.log(foco);
+            console.log(resultado);
+            }
+
+    </script>
 </body>
 </html>
