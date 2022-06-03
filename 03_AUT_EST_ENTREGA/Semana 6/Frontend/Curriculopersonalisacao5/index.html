@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Curriculo</title>
+    <link rel="stylesheet" href="estilo.css">
+    
+
+<script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+</head>
+<body>
+  <header>
+    <input type="button" value="Carregar curriculo" onclick="carregar()">
+      <h1 id="nome"></h1>
+  </header>
+  <section id="curriculo">
+    <div >
+        
+        <img id="ImagemDePerfil" src="Imagem/Eu.jpeg">
+        <h2>Habilidades:</h2>
+        <p>HTML</p>
+        <p>CSS</p>
+        <p>JavaScript</p>
+        <p>Python</p>
+        <p>GdScript</p>
+        <h2>Educação:</h2>
+        <p>Engenharia de Computação-Instituto de Tecnologia e Liderança-2022/2025</p>
+        <p>Ensino Médio-Anglo Leonardo da Vinci</p>
+        <p>Ensino Fundamental 2/1-Cólegio Rio Branco</p>
+    </div>
+      
+    <div>
+
+    </div>
+  </section>
+  <footer>
+    <p>&copy; Henrique Agostinho Schilder Lima</p>
+  </footer>
+
+  <script>
+    $('#curriculo').hide()
+    function carregar(){$('#curriculo').fadeIn('8800')
+    let url = '/info'
+    let xhttp = new XMLHttpRequest()
+    xhttp.open("get", url, false)
+    xhttp.send()
+    let data = JSON.parse(xhttp.responseText)[0]
+    console.log(data)
+
+    document.getElementById("nome").innerText = data.Nome
+    
+  
+  
+  }
+    
+
+
+  </script>
+  
+</body>
+</html>
