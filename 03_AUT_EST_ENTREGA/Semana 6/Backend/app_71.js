@@ -6,7 +6,7 @@ const sqlite3 = require('sqlite3').verbose();
 const hostname = '127.0.0.1';
 const port = 3022;
 const DBPATH = "dados.db"
-app.use(express.static("../Frontend/Curriculo/"));
+app.use(express.static("../Frontend/Curriculo5/"));
 
 app.get('/info', (req, res) => {
 	res.statusCode = 200;
