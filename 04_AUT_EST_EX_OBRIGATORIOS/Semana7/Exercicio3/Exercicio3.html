@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercicio3</title>
+</head>
+<body>
+    <input type="text" maxlength="14" name="" id="text">
+    <input type="button" value="Conferir" onclick="conferir()">
+    <script>
+        function conferir(){
+            text = document.getElementById("text").value;
+            list = text.split("");
+            console.log(list)
+            if (list[0] == "(" && list[3] == ")" && list[9] == "-"){
+                window.alert("Numero valido")
+            }
+            else{
+                window.alert("Numero invalido")
+            }
+
+        }
+    </script>
+    
+</body>
+</html>

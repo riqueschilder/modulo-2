@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercicio4</title>
+</head>
+<body>
+    <input type="number" name="" id="P">
+    <input type="radio" class="radio_item"  value="Noturno"  name="pc" id="N"> Noturno
+    <input type="radio" class="radio_item"  value="Diurno"  name="pc" id="D"> Diurno
+    <input type="button" value="Resolver" onclick="resolver()">
+    <div id="resultado">
+        <p>Resultado:</p>
+    </div>
+    <script>
+
+        function resolver(){
+            var turno =  document.querySelector('input[name="pc"]:checked').value;
+            var P = Number(document.getElementById("P").value);
+            var R = document.getElementById("resultado");
+            var V = 0
+            console.log(turno)
+            if (turno == "Diurno"){
+                if (P > 50){ V = P * 120}
+                else{V = P * 200}
+            }
+            if (turno == "Noturno"){
+                if (P > 50){ V = P * 80}
+                else{V = P * 100}
+            }
+            document.getElementById("resultado").innerHTML = "Resultado: " + V
+        }
+
+
+    </script>
+</body>
+</html>

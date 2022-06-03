@@ -6,51 +6,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Curriculo</title>
     <link rel="stylesheet" href="estilo.css">
-    <style>
-    body {
-
-      background-color: rgb(83, 144, 235);
-      font: normal 15pt Ariel;
-  
-  }
-  header{
-      text-align: center;
-      color: white;
-  
-  }
-  section {
-  
-      background-color: rgb(255, 255, 255);
-      border-radius: 10px;
-      padding: 15px;
-      width: 500px;
-      margin: auto;
-      box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.473);
-  
-     
-  }
-  div{
-      text-align: center;
-  }
-  img#ImagemDePerfil {
-      border-radius: 50%;
-      height: 150px;
-      width: 150px;
-      
-  }
-  footer {
-      text-align: center;
-      color: white;
-      font-style: italic;
-  }
-</style>
+    
 
 <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
 </head>
 <body>
   <header>
     <input type="button" value="Carregar curriculo" onclick="carregar()">
-      <h1>Henrique Agostinho Schilder Lima</h1>
+      <h1 id="nome"></h1>
   </header>
   <section id="curriculo">
     <div >
@@ -78,7 +41,19 @@
 
   <script>
     $('#curriculo').hide()
-    function carregar(){$('#curriculo').fadeIn('8800')}
+    function carregar(){$('#curriculo').fadeIn('8800')
+    let url = '/info'
+    let xhttp = new XMLHttpRequest()
+    xhttp.open("get", url, false)
+    xhttp.send()
+    let data = JSON.parse(xhttp.responseText)[0]
+    console.log(data)
+
+    document.getElementById("nome").innerText = data.Nome
+    
+  
+  
+  }
     
 
 

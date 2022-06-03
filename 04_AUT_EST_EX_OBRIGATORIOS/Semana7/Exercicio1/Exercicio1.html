@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercicio1</title>
+</head>
+<body>
+    <p> Escolha a quantidade:<input type="Number" id="n"></p>
+    <input type="button" value="+" onclick="somar()">
+    <input type="button" value="-" onclick="subtrair()">
+    <script>
+        
+        function somar(){
+        var entrada = Number(document.getElementById("n").value);
+        entrada += 1
+        window.document.getElementById("n").value = String(entrada);
+        }
+        function subtrair(){
+        var entrada = Number(document.getElementById("n").value);
+        entrada -= 1
+        window.document.getElementById("n").value = String(entrada);
+            
+
+        }
+
+        
+    </script>
+</body>
+</html>
