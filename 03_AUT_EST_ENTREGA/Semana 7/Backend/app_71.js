@@ -23,7 +23,7 @@ app.get('/info', (req, res) => {
 	db.close(); // Fecha o banco
 });
 // Insere um registro (é o C do CRUD - Create)
-app.post('/userinsert', urlencodedParser, (req, res) => {
+app.post('/infoinsert', urlencodedParser, (req, res) => {
     res.statusCode = 200;
     res.setHeader('Access-Control-Allow-Origin', '*'); // Isso é importante para evitar o erro de CORS
 
@@ -39,11 +39,11 @@ app.post('/userinsert', urlencodedParser, (req, res) => {
 });
 
 // Atualiza um registro (é o U do CRUD - Update)
-app.post('/userupdate', urlencodedParser, (req, res) => {
+app.post('/infoupdate', urlencodedParser, (req, res) => {
     res.statusCode = 200;
     res.setHeader('Access-Control-Allow-Origin', '*'); // Isso é importante para evitar o erro de CORS
 
-    sql = "UPDATE tbUser SET title = '" + req.body.title + "' WHERE userId = " + req.body.userId;
+    sql = "UPDATE Info SET email = henriqueschilder@gmail.com  WHERE Nome = Henrique" ;
     var db = new sqlite3.Database(DBPATH); // Abre o banco
     db.run(sql, [],  err => {
         if (err) {
@@ -59,7 +59,7 @@ app.post('/userdelete', urlencodedParser, (req, res) => {
     res.statusCode = 200;
     res.setHeader('Access-Control-Allow-Origin', '*'); // Isso é importante para evitar o erro de CORS
 
-    sql = "DELETE FROM tbUser WHERE userId = " + req.body.userId;
+    sql = "DELETE FROM Info WHERE Name = Henrique";
     var db = new sqlite3.Database(DBPATH); // Abre o banco
     db.run(sql, [],  err => {
         if (err) {
