@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercicio2</title>
+</head>
+<body>
+    Escreva um numero positivo: <input type="number" name="" id="numero">
+    <input type="button" value="Resolver" onclick="resolver()">
+    <div id="div">
+        Resultado:
+    </div>
+    <script>
+        function resolver(){
+            var numero = document.getElementById("numero").value;
+            var a = 1
+            var i = 0
+            var resultado = 0
+            
+            var div = document.getElementById("div");
+            var lista = numero.split('');
+            console.log(lista);
+            var tamanho = lista.length
+            console.log(tamanho);
+            while (a <= tamanho){
+                resultado = Number(resultado + Number(lista[i]))
+                i += 1
+                a += 1
+               
+            }
+             console.log(a)
+            div.innerHTML = resultado
+        }
+    </script>
+    
+</body>
+</html>

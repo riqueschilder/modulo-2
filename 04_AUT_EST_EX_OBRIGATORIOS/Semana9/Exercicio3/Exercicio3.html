@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercicio3</title>
+</head>
+<body>
+    Escreva os nomes  <input type="text" name="" id="n1"> <input type="text" name="" id="n2"> <input type="text" name="" id="n3">
+    <input type="button" value="Resolver" onclick="resolver()">
+    <div id="div">
+        Resultado:
+    </div>
+    <script>
+        function resolver(){
+
+        pnome = document.getElementById("n1").value;
+        snome = document.getElementById("n2").value;
+        tnome = document.getElementById("n3").value;
+
+        lnomes = [pnome, snome, tnome];
+        nomes_ordem_alfabetica = lnomes.sort()
+
+        document.getElementById("div").innerHTML = lnomes;
+
+};
+        </script>
+</body>
+</html>
